@@ -18,7 +18,7 @@ const ChatContainer = () => {
   const [messages, setMessages] = useState<Messages[]>([]);
 
   const bottomDivRef =useRef<HTMLDivElement | null>(null)
-
+  
   useEffect(() => {
     const q = query(collection(db, 'message'), orderBy('date', 'asc'));
     const unsubscribe = onSnapshot(q, (snapshot) => {
